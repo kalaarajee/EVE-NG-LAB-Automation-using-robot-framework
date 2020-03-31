@@ -1,13 +1,12 @@
 from netmiko import ConnectHandler
 import time
 import multiprocessing as mp
-import getpass
 import logging
 import os
 import re
 import logging.handlers
 from ssh_netmiko import *
-logger_root = os.environ['LOGGER'] if 'LOGGER' in os.environ else 'robot_frameworkLog'
+
 logger = logging.getLogger(f'{logger_root}.{__name__}')
 
 
@@ -20,13 +19,6 @@ class Router:
         self.platform = ''
         self.ssh  = ssh_connection(hostname, username, password)
 
-    @property
-    def modules(self):
-        show_platform = self.cli(['show platform'], screen=False).split('\r\n')
-        return show_platform
-
-    def refresh_ssh(self):
-        self.ssh = ssh_connection(hostname, username, password)
 
     def get_show_run(self):
         output = cli(ssh_connection,commands='show run')
@@ -42,8 +34,8 @@ class Router:
             logger.warning(f'Error connecting SSH to {self.hostname}')
             logger.warning(e)
 
-    def cli(ssh_connection,hostname, command=None, log_file='', screen=True, banner=''):
-        output = cli(ssh_connection,hostname,command, log_file=log_file, banner=banner)
+    def cli(ssh_connection,hostname, command=None, log_file=''):
+        output = cli(ssh_connection,hostname,command, log_file=log_file)
         return output
     def configure_ip_address(hostname):
 
