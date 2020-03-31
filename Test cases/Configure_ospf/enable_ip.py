@@ -3,7 +3,7 @@ from pprint import pprint
 import json
 
 '''
-This playbook will use Router.py script to configure ip address 
+This playbook will use Router.py script to configure ip address and ospf in R1 R2 and R3
 '''
 
 def enable_ssh(device):
@@ -15,8 +15,6 @@ def cli(device,command):
     pprint(output)
 def enable_ip(hostname):
     output = Router.configure_ip_address(hostname)
-
-
 
 def enable_ospf(hostname):
     output = Router.configure_ospf(hostname)
