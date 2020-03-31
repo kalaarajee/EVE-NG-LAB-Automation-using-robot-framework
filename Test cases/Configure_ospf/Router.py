@@ -323,6 +323,5 @@ if __name__ == '__main__':
     # test1 = Router.configure_ospf('R2')
     # test2 = Router.configure_ospf('R3')
     #     # print(x)
-    test= Router.ping('10.1.1.51')
-    doctest.testmod()
+     doctest.testmod()
 
