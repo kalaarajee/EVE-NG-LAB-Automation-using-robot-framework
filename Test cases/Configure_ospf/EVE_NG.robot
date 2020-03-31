@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${Browser}  Chrome
-${URL}  https://10.1.1.150/#/login
+${URL}  https://10.1.1.150/#/login  { USE your information }
 
 
 *** Test Cases ***
