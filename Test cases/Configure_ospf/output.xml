@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0 on win32)" generated="20200330 15:52:07.214" rpa="false">
+<suite id="s1" name="Ssh" source="C:\Users\Kadhim\Desktop\Robot-framework\Test cases\Configure_Bgp\Ssh.robot">
+<test id="s1-t1" name="show commands">
+<kw name="display ssh connection hosts">
+<doc>ssh connection</doc>
+<kw name="Enable Ssh" library="enable_ip">
+<arguments>
+<arg>${hostname1}</arg>
+</arguments>
+<assign>
+<var>${ssh1}</var>
+</assign>
+<msg timestamp="20200330 15:52:15.181" level="INFO">SSH connection established to 10.1.1.51:22
+Interactive SSH session established</msg>
+<msg timestamp="20200330 15:52:15.181" level="INFO">${ssh1} = ssh session established!!</msg>
+<status status="PASS" starttime="20200330 15:52:07.450" endtime="20200330 15:52:15.181"></status>
+</kw>
+<kw name="Enable Ssh" library="enable_ip">
+<arguments>
+<arg>${hostname2}</arg>
+</arguments>
+<assign>
+<var>${ssh2}</var>
+</assign>
+<msg timestamp="20200330 15:52:22.888" level="INFO">SSH connection established to 10.1.1.52:22
+Interactive SSH session established</msg>
+<msg timestamp="20200330 15:52:22.888" level="INFO">${ssh2} = ssh session established!!</msg>
+<status status="PASS" starttime="20200330 15:52:15.182" endtime="20200330 15:52:22.888"></status>
+</kw>
+<kw name="Enable Ssh" library="enable_ip">
+<arguments>
+<arg>${hostname3}</arg>
+</arguments>
+<assign>
+<var>${ssh3}</var>
+</assign>
+<msg timestamp="20200330 15:52:30.592" level="INFO">SSH connection established to 10.1.1.53:22
+Interactive SSH session established</msg>
+<msg timestamp="20200330 15:52:30.592" level="INFO">${ssh3} = ssh session established!!</msg>
+<status status="PASS" starttime="20200330 15:52:22.889" endtime="20200330 15:52:30.593"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ssh1}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:52:30.593" endtime="20200330 15:52:30.594"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ssh2}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:52:30.594" endtime="20200330 15:52:30.595"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ssh3}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:52:30.595" endtime="20200330 15:52:30.596"></status>
+</kw>
+<status status="PASS" starttime="20200330 15:52:07.449" endtime="20200330 15:52:30.596"></status>
+</kw>
+<kw name="display show ip">
+<kw name="Cli" library="enable_ip">
+<arguments>
+<arg>${hostname1}</arg>
+<arg>${show_ip}</arg>
+</arguments>
+<assign>
+<var>${result1}</var>
+</assign>
+<msg timestamp="20200330 15:52:39.397" level="INFO">SSH connection established to 10.1.1.51:22
+Interactive SSH session established
+['Interface              IP-Address      OK? Method Status                '
+ 'Protocol\n'
+ 'GigabitEthernet1       10.1.1.51       YES NVRAM  up                    '
+ 'up      \n'
+ 'GigabitEthernet2       10.12.12.1      YES manual up                    '
+ 'up      \n'
+ 'GigabitEthernet3       10.13.13.1      YES manual up                    '
+ 'up      \n'
+ 'GigabitEthernet4       unassigned      YES NVRAM  administratively down '
+ 'down    \n'
+ 'Loopback0              1.1.1.1         YES manual up                    '
+ 'up      ']</msg>
+<msg timestamp="20200330 15:52:39.397" level="INFO">${result1} = None</msg>
+<status status="PASS" starttime="20200330 15:52:30.597" endtime="20200330 15:52:39.397"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${result1}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:52:39.398" endtime="20200330 15:52:39.399"></status>
+</kw>
+<status status="PASS" starttime="20200330 15:52:30.596" endtime="20200330 15:52:39.399"></status>
+</kw>
+<kw name="display show run">
+<kw name="Cli" library="enable_ip">
+<arguments>
+<arg>${hostname1}</arg>
+<arg>${show_run}</arg>
+</arguments>
+<assign>
+<var>${result2}</var>
+</assign>
+<msg timestamp="20200330 15:52:48.182" level="INFO">SSH connection established to 10.1.1.51:22
+Interactive SSH session established
+['Building configuration...\n'
+ '\n'
+ 'Current configuration : 6382 bytes\n'
+ '!\n'
+ '! Last configuration change at 20:50:23 UTC Mon Mar 30 2020 by admin\n'
+ '!\n'
+ 'version 16.11\n'
+ 'service timestamps debug datetime msec\n'
+ 'service timestamps log datetime msec\n'
+ 'service call-home\n'
+ 'platform qfp utilization monitor load 80\n'
+ 'no platform punt-keepalive disable-kernel-core\n'
+ 'platform console serial\n'
+ '!\n'
+ 'hostname R1\n'
+ '!\n'
+ 'boot-start-marker\n'
+ 'boot-end-marker\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'no aaa new-model\n'
+ 'call-home\n'
+ ' ! If contact email address in call-home is configured as '
+ 'sch-smart-licensing@cisco.com\n'
+ ' ! the email address configured in Cisco Smart License Portal will be used '
+ 'as contact email address to send SCH notifications.\n'
+ ' contact-email-addr sch-smart-licensing@cisco.com\n'
+ ' profile "CiscoTAC-1"\n'
+ '  active\n'
+ '  destination transport-method http\n'
+ '  no destination transport-method email\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'ip domain name test.local\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'login on-success log\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'subscriber templating\n'
+ '! \n'
+ '! \n'
+ '! \n'
+ '! \n'
+ '!\n'
+ '!\n'
+ 'multilink bundle-name authenticated\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'crypto pki trustpoint TP-self-signed-733773171\n'
+ ' enrollment selfsigned\n'
+ ' subject-name cn=IOS-Self-Signed-Certificate-733773171\n'
+ ' revocation-check none\n'
+ ' rsakeypair TP-self-signed-733773171\n'
+ '!\n'
+ 'crypto pki trustpoint SLA-TrustPoint\n'
+ ' enrollment pkcs12\n'
+ ' revocation-check crl\n'
+ '!\n'
+ '!\n'
+ 'crypto pki certificate chain TP-self-signed-733773171\n'
+ ' certificate self-signed 01\n'
+ '  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 \n'
+ '  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 \n'
+ '  69666963 6174652D 37333337 37333137 31301E17 0D323030 33323231 35313134 \n'
+ '  305A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F \n'
+ '  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3733 33373733 \n'
+ '  31373130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 \n'
+ '  82010100 CCF8DFE2 8EAEEE9F F4378EC4 681BBC42 9069CCC8 A9A20039 86B13A84 \n'
+ '  5AF5B926 13B2F5BE A6EC9847 BC9C7432 2DF829F4 0E20365E A3A3E09C CDE4ED2D \n'
+ '  820A4C6C BFA22E2C 471641AC AEA92397 0BC01BAD 34836EB8 696B3BC1 2A21FEF3 \n'
+ '  EF908ED5 C5774D38 6462B6FB 6B02E9CD D696E97B EDC2FAAB 9CC57B46 FBE7CCC8 \n'
+ '  D6FE0FB3 167ED097 67B2E832 6F8EE00E E29F8A23 DA18D863 812E8882 DFB88016 \n'
+ '  6E9989C8 F9293BA7 D5E18731 30070B20 D09D7EFB F81F1F83 4FEB2E0E 75FCBCAA \n'
+ '  166E862A FF26DF0C 0B69C2E8 390528E7 0649A3E0 0CF796E7 3EA194E0 5C953B95 \n'
+ '  E2C9817F 25D5FD9F A6D5C47D DAF77282 2B5C0F7B 9274CE3D 34F06684 FB83D881 \n'
+ '  3413A347 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F \n'
+ '  0603551D 23041830 1680140E 0BA4B8BE F3235782 52DF3CBB F114407D 9691D330 \n'
+ '  1D060355 1D0E0416 04140E0B A4B8BEF3 23578252 DF3CBBF1 14407D96 91D3300D \n'
+ '  06092A86 4886F70D 01010505 00038201 0100B852 3EC1A531 0230BBE0 D97ECF71 \n'
+ '  726778F9 B16919CA BCDD7744 A72D17AA 185F6E2D 1DC1CE46 05965EBE 051CB268 \n'
+ '  34A9E358 27B85B81 65854868 50FA6282 A373D3DF 93250780 A42F6B64 90A69B23 \n'
+ '  AC2C790D 6524D934 68503113 49CC7CA3 7E146614 3B35E180 D406D95D B20969BE \n'
+ '  0C556903 78C2C81F BFE284CC D5F2913F 7A23A6D6 4E38D6C0 C538003B F2DFDE37 \n'
+ '  FF5DB670 CBBB4E89 E7E6C4E5 E6117127 5F576651 618AAA11 C96D076A 2FAD09B5 \n'
+ '  7F741441 AFB77A3A 52FB9FFC E23C477D 3009642F 4894815F C48F1CDA 529CB8EF \n'
+ '  6847AE36 B985B3DC 6C41CE5A 4AF33AE8 2CF857FE CE7B0364 C2377713 97188378 \n'
+ '  EFC2D958 1F426B4C 8B1F6E4D 186E8BA1 00C5\n'
+ '  \tquit\n'
+ 'crypto pki certificate chain SLA-TrustPoint\n'
+ ' certificate ca 01\n'
+ '  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 \n'
+ '  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 \n'
+ '  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 \n'
+ '  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 \n'
+ '  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 \n'
+ '  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 \n'
+ '  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D \n'
+ '  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 \n'
+ '  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE \n'
+ '  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC \n'
+ '  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 \n'
+ '  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 \n'
+ '  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 \n'
+ '  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 \n'
+ '  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 \n'
+ '  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 \n'
+ '  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 \n'
+ '  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 \n'
+ '  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B \n'
+ '  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 \n'
+ '  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C \n'
+ '  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B \n'
+ '  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 \n'
+ '  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB \n'
+ '  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 \n'
+ '  D697DF7F 28\n'
+ '  \tquit\n'
+ '!\n'
+ 'license udi pid CSR1000V sn 9PQ92A7EVOG\n'
+ 'diagnostic bootup level minimal\n'
+ '!\n'
+ 'spanning-tree extend system-id\n'
+ 'memory free low-watermark processor 80526\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'username admin privilege 15 secret 9 '
+ '$9$Y0kzkNobOviHak$EXVhJi8EQWTB0LI7W2EdWhu8EEaYf0wdXnkGel/YrzU\n'
+ '!\n'
+ 'redundancy\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '! \n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '! \n'
+ '! \n'
+ '!\n'
+ '!\n'
+ 'interface Loopback0\n'
+ ' ip address 1.1.1.1 255.255.255.255\n'
+ '!\n'
+ 'interface GigabitEthernet1\n'
+ ' ip address 10.1.1.51 255.255.255.0\n'
+ ' negotiation auto\n'
+ ' no mop enabled\n'
+ ' no mop sysid\n'
+ '!\n'
+ 'interface GigabitEthernet2\n'
+ ' ip address 10.12.12.1 255.255.255.0\n'
+ ' negotiation auto\n'
+ '!\n'
+ 'interface GigabitEthernet3\n'
+ ' ip address 10.13.13.1 255.255.255.0\n'
+ ' negotiation auto\n'
+ '!\n'
+ 'interface GigabitEthernet4\n'
+ ' no ip address\n'
+ ' shutdown\n'
+ ' negotiation auto\n'
+ ' no mop enabled\n'
+ ' no mop sysid\n'
+ '!\n'
+ 'router ospf 1\n'
+ ' router-id 1.1.1.1\n'
+ ' network 1.1.1.1 0.0.0.0 area 0\n'
+ ' network 10.12.12.0 0.0.0.255 area 0\n'
+ ' network 10.13.13.0 0.0.0.255 area 0\n'
+ '!\n'
+ 'ip forward-protocol nd\n'
+ 'ip http server\n'
+ 'ip http authentication local\n'
+ 'ip http secure-server\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'control-plane\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'line con 0\n'
+ ' stopbits 1\n'
+ 'line vty 0\n'
+ ' privilege level 15\n'
+ ' login local\n'
+ ' length 0\n'
+ 'line vty 1 4\n'
+ ' privilege level 15\n'
+ ' login local\n'
+ 'line vty 5 15\n'
+ ' privilege level 15\n'
+ ' login local\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ '!\n'
+ 'end\n']</msg>
+<msg timestamp="20200330 15:52:48.183" level="INFO">${result2} = None</msg>
+<status status="PASS" starttime="20200330 15:52:39.400" endtime="20200330 15:52:48.183"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${result2}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:52:48.183" endtime="20200330 15:52:48.184"></status>
+</kw>
+<status status="PASS" starttime="20200330 15:52:39.400" endtime="20200330 15:52:48.184"></status>
+</kw>
+<doc>show information</doc>
+<status status="PASS" starttime="20200330 15:52:07.449" endtime="20200330 15:52:48.185" critical="yes"></status>
+</test>
+<test id="s1-t2" name="configuration">
+<kw name="configure ip and ospf">
+<kw name="Enable Ip" library="enable_ip">
+<arguments>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${enable_ip}</var>
+</assign>
+<msg timestamp="20200330 15:53:08.965" level="INFO">Start configure ip on R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+SSH connection established to 10.1.1.51:22
+Interactive SSH session established
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+Pushing the following configuration on R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+Configuring config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface lo0
+R1(config-if)#                       ip address 1.1.1.1 255.255.255.255
+R1(config-if)#                       exit
+R1(config)#                       interface Gi2
+R1(config-if)#                       ip address 10.12.12.1 255.255.255.0
+R1(config-if)#                       no shut
+R1(config-if)#                       exit
+R1(config)#                       interface Gi3
+R1(config-if)#                       ip address 10.13.13.1 255.255.255.0
+R1(config-if)#                       no shut
+R1(config-if)#                       exit
+R1(config)#end
+R1# on  router R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+Saving configuration on R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=</msg>
+<msg timestamp="20200330 15:53:08.966" level="INFO">${enable_ip} = None</msg>
+<status status="PASS" starttime="20200330 15:52:48.190" endtime="20200330 15:53:08.966"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${enable_ip}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:53:08.966" endtime="20200330 15:53:08.967"></status>
+</kw>
+<kw name="Enable Ospf" library="enable_ip">
+<arguments>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${enable_ospf}</var>
+</assign>
+<msg timestamp="20200330 15:53:29.491" level="INFO">Start adding OSPF on  R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+SSH connection established to 10.1.1.51:22
+Interactive SSH session established
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+Pushing the following configuration on R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+Configuring config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#router ospf 1
+R1(config-router)#                       router-id  1.1.1.1
+R1(config-router)#                       network 1.1.1.1 0.0.0.0 area 0
+R1(config-router)#                       network 10.12.12.1 0.0.0.255 area 0
+R1(config-router)#                       network 10.13.13.1 0.0.0.255 area 0
+R1(config-router)#                       exit
+R1(config)#end
+R1# on  router R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=
+Saving configuration on R1
+=_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_==_=_=</msg>
+<msg timestamp="20200330 15:53:29.491" level="INFO">${enable_ospf} = None</msg>
+<status status="PASS" starttime="20200330 15:53:08.967" endtime="20200330 15:53:29.491"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${enable_ospf}</arg>
+</arguments>
+<status status="PASS" starttime="20200330 15:53:29.492" endtime="20200330 15:53:29.493"></status>
+</kw>
+<status status="PASS" starttime="20200330 15:52:48.190" endtime="20200330 15:53:29.493"></status>
+</kw>
+<doc>configure ip and ospf on R1 R2 and R3</doc>
+<status status="PASS" starttime="20200330 15:52:48.187" endtime="20200330 15:53:29.494" critical="yes"></status>
+</test>
+<doc>A test suit for configuring ospf</doc>
+<metadata>
+<item name="Version">1.0
+Author Kadhim Alaarajee
+Date Mar 30 2020
+Topology:-
+________________________________
+| R1 OSPF |
+| /| AREA 0 |
+| / |  |
+| / |  |
+| / |  |
+| / |  |
+|_____ R2_/____ |___ R3_______|
+Sw2
+|
+|
+|
+___Internet___ Sw1 ___Management___
+</item>
+</metadata>
+<status status="PASS" starttime="20200330 15:52:07.216" endtime="20200330 15:53:29.496"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Ssh">Ssh</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
