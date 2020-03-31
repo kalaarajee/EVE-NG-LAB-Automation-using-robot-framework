@@ -61,9 +61,9 @@
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://input[@ng-model='password']</arg>
-<arg>Z@in@bKadJyou@2017</arg>
+<arg>password</arg>
 </arguments>
-<msg timestamp="20200330 20:01:57.337" level="INFO">Typing text 'Z@in@bKadJyou@2017' into text field 'xpath://input[@ng-model='password']'.</msg>
+<msg timestamp="20200330 20:01:57.337" level="INFO">Typing text 'password' into text field 'xpath://input[@ng-model='password']'.</msg>
 <status status="PASS" starttime="20200330 20:01:57.337" endtime="20200330 20:01:57.495"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
