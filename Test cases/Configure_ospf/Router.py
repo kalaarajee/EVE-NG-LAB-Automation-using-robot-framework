@@ -11,8 +11,6 @@ logger_root = os.environ['LOGGER'] if 'LOGGER' in os.environ else 'robot_framewo
 logger = logging.getLogger(f'{logger_root}.{__name__}')
 
 
-
-
 class Router:
     def __init__(self,ssh,hostname, username, password):
         self.hostname = hostname
@@ -310,7 +308,6 @@ class Router:
         else:
               print('Error, no valid device name ')
               exit()
-
 
 if __name__ == '__main__':
     import doctest
